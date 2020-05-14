@@ -1,0 +1,61 @@
+.Person {
+    height: 100vh;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.PersonName,
+.PersonCounter
+{
+    height: 6vh;
+    display: flex;
+    align-items: center;
+}
+
+.PersonName {
+    font-size: x-large;
+}
+
+.PersonCounter {
+    justify-content: flex-end;
+}
+
+.Counter {
+    margin-right: 1vw;
+    font-size: 40px;
+}
+
+.AboutPerson,
+.FavoriteMovies,
+.Name {
+    margin-left: 4vw;
+}
+
+.From,
+.Title,
+.Employer,
+.FavoriteMovies
+{
+    display: flex;
+    font-weight: 999;
+}
+
+.FromValue,
+.TitleValue,
+.EmployerValue
+{
+    font-weight: 500;
+    margin-left: .25vw;
+}
+
+.FavoriteMovies {
+    flex-direction: column;
+}
+
+.Movie1,
+.Movie2,
+.Movie3
+{
+    font-weight: 500;
+    margin-left: 2.5vw;
+}
