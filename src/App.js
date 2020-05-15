@@ -9,18 +9,28 @@ export default class App extends Component{
     super()
 
     this.state = {
-      person: Data
+      person: Data,
+      index: 0
     }
+    this.previousButton = this.previousButton.bind(this)
+    this.nextButton = this.nextButton.bind(this)
   }
 
-  
+  previousButton(){
+    if(this.state.index === 0)
+    return
+
+    this.setState((elem) => ({index: elem.index - 1}))
+  }
+
+  nextButton(){
+    if(this.state.index === this.state.person.length - 1)
+    return
+
+    this.setState((elem) => ({index: elem.index + 1}))
+  }
   
   render(){
-    const person = this.state.person.map((elem, index)=> {
-     return <div>
-        <Person person={elem}/>
-      </div>
-    })
     return(
       <div className="App">
         <div className="Header">
@@ -29,11 +39,11 @@ export default class App extends Component{
         <div className="BlackBox">
           <div className="Content">
             <div className="WhiteCard">
-              {person}
+              <Person person={this.state.person[this.state.index]}/>
             </div>
             <div className="Buttons">
-              <button className="Prev">Previous</button>
-              <button className="Next">Next</button>
+              <button className="Prev" onClick={this.previousButton}>Previous</button>
+              <button className="Next" onClick={this.nextButton}>Next</button>
             </div>
           </div>
         </div>
